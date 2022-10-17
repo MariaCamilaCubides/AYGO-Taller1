@@ -22,12 +22,13 @@ public class PhraseController {
     }
 
     @PostMapping
-    public Phrase savePhrase(@RequestBody String log) {
+    public List<Phrase> savePhrase(@RequestBody String log) {
         JSONObject jsonObject = new JSONObject(log);
         Phrase finalPhrase = new Phrase(
                 jsonObject.getString("body"),
                 LocalDateTime.now()
         );
-        return phraseService.createPhrase(finalPhrase);
+        phraseService.createPhrase(finalPhrase);
+        return phraseService.getAllPhrases();
     }
 }
