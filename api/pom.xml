@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>co.edu.escuelaing</groupId>
 	<artifactId>aygo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>taller1</name>
 	<description>API</description>
 	<properties>
