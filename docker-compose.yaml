@@ -17,6 +17,11 @@ services:
       - 8080:8080
     links:
       - mongodb
+  ui:
+    image: ui
+    container_name: ui
+    ports:
+      - 8081:8080
 volumes:
   data: {}
 networks:
