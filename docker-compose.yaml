@@ -11,14 +11,14 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=rootuser
       - MONGO_INITDB_ROOT_PASSWORD=rootpass
   api: 
-    image: api
+    image: macacumar97/api
     container_name: api
     ports:
       - 8080:8080
     links:
       - mongodb
   ui:
-    image: ui
+    image: macacumar97/ui
     container_name: ui
     ports:
       - 8081:8080
