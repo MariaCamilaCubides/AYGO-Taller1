@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.3"
 services:
   mongodb:
     image: mongo
@@ -10,6 +10,11 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=rootuser
       - MONGO_INITDB_ROOT_PASSWORD=rootpass
+  round-robin:
+    image: macacumar97/round-robin
+    container_name: round-robin
+    ports:
+      - 8585:8585
   api: 
     image: macacumar97/api
     container_name: api
@@ -24,6 +29,3 @@ services:
       - 8081:8080
 volumes:
   data: {}
-networks:
-  default:
-    name: mongodb_network
