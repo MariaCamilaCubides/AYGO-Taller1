@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "dotenv -e .env -- node index.js"
+    "star": "node index.js",
+    "startLocal": "dotenv -e .env -- node index.js"
   },
   "author": {
     "name": "Maria Camila Cubides Martin",

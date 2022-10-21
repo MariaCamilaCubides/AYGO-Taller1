@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
 })
 
 function startRoundRobin() {
-    app.listen(port, () => {
+    app.listen(port || '8585', () => {
         initializeRoundRobin();
     })
 }
