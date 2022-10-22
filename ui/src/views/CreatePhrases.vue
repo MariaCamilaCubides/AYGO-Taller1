@@ -71,7 +71,7 @@ export default {
         return;
       }
       try {
-      const getMessagesResult = await this.axios.post('http://localhost:8080/api/v1/phrases', {
+      const getMessagesResult = await this.axios.post(`http://${process.env.VUE_APP_ROUND_ROBIN_URL}:8585`, {
         body: this.message,
       });
       const dataParsed = getMessagesResult.data.map((x) => {
