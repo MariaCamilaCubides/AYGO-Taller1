@@ -38,6 +38,3 @@ services:
       - VUE_APP_ROUND_ROBIN_URL=localhost
 volumes:
   data: {}
-networks:
-  default:
-    name: mongodb_network
