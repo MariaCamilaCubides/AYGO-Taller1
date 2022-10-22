@@ -15,17 +15,29 @@ services:
     container_name: round-robin
     ports:
       - 8585:8585
+    environment:
+      - ROUND_ROBIN_PORT=8585
+      - SERVICE_URL=localhost
+      - SERVICE_PATH=api/v1/phrases
+      - SERVICE_INITIAL_PORT=3030
   api: 
     image: macacumar97/api
     container_name: api
     ports:
-      - 8080:8080
+      - 3030:8080
+      - 3031:8080
+      - 3032:8080
     links:
       - mongodb
   ui:
     image: macacumar97/ui
     container_name: ui
     ports:
-      - 8081:8080
+      - 8081:80
+    environment:
+      - VUE_APP_ROUND_ROBIN_URL=localhost
 volumes:
   data: {}
+networks:
+  default:
+    name: mongodb_network
